@@ -1,5 +1,6 @@
 name: 'GitHub Actions Approval Request'
 description: 'Request an approval to trigger a GitHub Action'
+inputs:
   trigger-workflow:
     description: 'ID of Workflow to trigger for the repository'
     required: true
