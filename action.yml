@@ -1,0 +1,5 @@
+name: 'GitHub Actions Approval Request'
+description: 'Request an approval to trigger a GitHub Action'
+runs:
+  using: 'node16'
+  main: 'index.js'
