@@ -1,5 +1,8 @@
 name: 'GitHub Actions Approval Request'
 description: 'Request an approval to trigger a GitHub Action'
+  trigger-workflow:
+    description: 'ID of Workflow to trigger for the repository'
+    required: true
 runs:
   using: 'node16'
   main: 'index.js'
