@@ -4,6 +4,9 @@ inputs:
   trigger-workflow:
     description: 'ID of Workflow to trigger for the repository'
     required: true
+  notification-webhook-url:
+    description: 'Webhook URL to notify'
+    required: true
 runs:
   using: 'node16'
   main: 'index.js'
