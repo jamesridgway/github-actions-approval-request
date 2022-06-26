@@ -11,6 +11,7 @@ try {
     const workflowIdToTrigger = core.getInput('trigger-workflow');
     const webhookUrl = core.getInput('notification-webhook-url');
     const gitHubActionsApprovalApiUrl = core.getInput('github-actions-approval-api-url');
+    const gitHubActionsApprovalApiKey = core.getInput('github-actions-approval-api-key');
 
     console.log(`Triggering workflow ${workflowIdToTrigger} for ${repositoryFullName} with commit hash ${commitHash}`);
 
@@ -20,9 +21,13 @@ try {
         workflowIdToTrigger,
         webhookUrl
     }
-    axios.post(`${gitHubActionsApprovalApiUrl}/api/approval`, webhookPayload)
-        .then(response => console.log(`Webhook responded with a ${response.status} response`))
-        .catch(error => console.error('There was an error ', error));
+    axios.post(`${gitHubActionsApprovalApiUrl}/api/approval`, webhookPayload, {
+        headers: {
+            'x-api-key': gitHubActionsApprovalApiKey
+        }
+    })
+    .then(response => console.log(`Webhook responded with a ${response.status} response`))
+    .catch(error => console.error('There was an error ', error));
 } catch (error) {
     core.setFailed(error.message);
 }
