@@ -31,7 +31,7 @@ Add the step as follows to your workflow
 ## How does this work?
 For a detailed explanation of how this works checkout this blog post:
 
-* Approving Builds and Workflows with GitHub Actions and Microsoft Teams
+* (Approving Builds and Workflows with GitHub Actions and Microsoft Teams)[https://www.jamesridgway.co.uk/approving-builds-and-workflows-with-github-actions-and-microsoft-teams/]
 
 Alternatively, see the diagram below for a summary:
 
